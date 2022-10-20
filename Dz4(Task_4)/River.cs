@@ -2,10 +2,10 @@
 
 public class River : GeogObject
 {
-    private int Speed;
-    private int Length;
+    private double Speed;
+    private double Length;
 
-    public River(int speed, int length, double x, double y, string name, string description)
+    public River(double speed, double length, double x, double y, string name, string description)
         : base(x, y, name, description)
     {
         Speed = speed;

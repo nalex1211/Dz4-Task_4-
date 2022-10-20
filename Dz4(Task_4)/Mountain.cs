@@ -2,9 +2,9 @@
 
 public class Mountain : GeogObject
 {
-    private int HighestPoint;
+    private double HighestPoint;
 
-    public Mountain(int highestPoint, double x, double y, string name, string description)
+    public Mountain(double highestPoint, double x, double y, string name, string description)
         : base(x, y, name, description)
     {
         HighestPoint = highestPoint;

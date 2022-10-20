@@ -4,35 +4,35 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string obj, description, name;
-        double x, y;
+        const string riv = "R";
+        const string mount = "M";
 
         Console.Write("Enter your geographical object(R-River/M-Mountain): ");
-        obj = Console.ReadLine() ?? throw new ArgumentNullException(nameof(obj));
+        string obj = Console.ReadLine() ?? throw new ArgumentNullException(nameof(obj));
 
         Console.Write("Enter X and Y coordinates: ");
-        x = Convert.ToInt32(Console.ReadLine());
-        y = Convert.ToInt32(Console.ReadLine());
+        double x = Convert.ToInt32(Console.ReadLine());
+        double y = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Enter description: ");
-        description = Console.ReadLine() ?? throw new ArgumentNullException(nameof(description));
+        string description = Console.ReadLine() ?? throw new ArgumentNullException(nameof(description));
 
         switch (obj) {
-            case "R":
+            case riv:
                 Console.Write("Enter speed and length of river: ");
-                int speed = Convert.ToInt32(Console.ReadLine());
-                int length = Convert.ToInt32(Console.ReadLine());
+                double speed = Convert.ToInt32(Console.ReadLine());
+                double length = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Enter name of river: ");
-                name = Console.ReadLine() ?? throw new ArgumentNullException(nameof(name));
+                string name = Console.ReadLine() ?? throw new ArgumentNullException(nameof(name));
 
                 var river = new River(speed, length, x, y, name, description);
                 river.GetInfo();
                 break;
 
-            case "M":
+            case mount:
                 Console.Write("Enter the highest point of mountain: ");
-                int highestPoint = Convert.ToInt32(Console.ReadLine());
+                double highestPoint = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Enter name of mountain: ");
                 name = Console.ReadLine() ?? throw new ArgumentNullException(nameof(name));

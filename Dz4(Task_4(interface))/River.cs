@@ -2,19 +2,19 @@
 
 internal class River : IGeogObject
 {
-    public double X { get; set; }
-    public double Y { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    private int Length;
-    private int Speed;
+    private double X;
+    private double Y;
+    private string Name;
+    private string Description;
+    private double Length;
+    private double Speed;
 
     public River(double x, double y, string name, string description, int length, int speed)
     {
         X = x;
         Y = y;
-        Name = name;
-        Description = description;
+        Name = name ?? throw new ArgumentNullException(nameof(Name));
+        Description = description ?? throw new ArgumentNullException(nameof(Description));
         Length = length;
         Speed = speed;
     }

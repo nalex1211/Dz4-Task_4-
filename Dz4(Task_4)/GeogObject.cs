@@ -6,14 +6,13 @@ public abstract class GeogObject
     private double Y;
     private string Name;
     private string Description;
-    //private string InfoMethod;
 
     public GeogObject(double x, double y, string name, string description)
     {
         X = x;
         Y = y;
-        Name = name;
-        Description = description;
+        Name = name ?? throw new ArgumentNullException(nameof(Name));
+        Description = description ?? throw new ArgumentNullException(nameof(Description));
     }
 
     public virtual void GetInfo()
